@@ -8,8 +8,7 @@ categories: jekyll update
 When I was looking for a new project for a website, there were 3 things 
 
 I had to be able to update it from anywhere, not in front of a computer
-It had to be simple, and not get in my way
-It had to be 
+It had to be simple, and not get in my way.
 
 One of the things I thought would be cool would be if I could edit and manage this site completely from my iPad (or any other iOS device).  Why? Well, Why not.
 
