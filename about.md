@@ -4,8 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Hello!  My name is Daniel Melilli and I am a passionate technology enthusiast. My focus currently is on Cloud Technology, DevOps
-and automation.  You will also find some information on some of my other interests such as Home Automation, Development and many
+Hello!  My name is Daniel Melilli and I am a passionate technology enthusiast. 
+My focus currently is on Cloud Technology, DevOps and automation.  You will also find some information on some of my other interests such as Home Automation, Development and many
 things Rasbperry Pi!
 
 I am currently working as a Technicai Director leading Site Reliability Engineering supporting a vast amount of modern technologies on Major Cloud providers.  You can find more about me on [Linkedin](https://linkedin.com/in/danielmelilli)
