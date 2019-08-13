@@ -18,6 +18,12 @@ So far, it seems to be displaying battery and sensor information.
 
 After you publish the code, you should be able to set the sensor in discovery mode and add it in SmartThings.
 
+If you have some free time, look at Tomas Axerot's GitHub page. He has a ton of great code for other SmartThings devices.   
+
+[Tomas Axerot](https://github.com/tomasaxerot)
+
+
+
 
 {% highlight groovy %}
 /*
