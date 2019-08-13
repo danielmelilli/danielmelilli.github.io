@@ -5,7 +5,7 @@ date:   2019-08-09 00:02:44 -0400
 categories: jekyll update
 ---
 
-When I was looking for a new project for a website, there were 3 things 
+When I was looking for a new project for a website, there were 3 things that it had to have.
 
 I had to be able to update it from anywhere, not in front of a computer
 It had to be simple, and not get in my way.
