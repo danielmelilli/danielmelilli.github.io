@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "Using Secure Secret in HASS"
+date:   2019-07-22 00:02:44 -0400
+categories: jekyll update
+---
+
+
 In most cases, HASS will be used programtically, and if you are following best practices, you probably
 should be storing most of your configuration in Github.  
 
