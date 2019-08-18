@@ -5,15 +5,12 @@ date:   2019-08-18 00:02:44 -0400
 categories: jekyll update
 ---
 
-
-
 Installing Icinga on Raspberry Pi
 
 You can configure Icinga as an agent for your existing icinga system, or as a standalone
 monitoring system
 
 Why use Icinga?
-
 
 Well, firstly it's Open Source. If you have used Nagios before, you will
 see that a lot of things are similair (since it's based on Nagios).  And
