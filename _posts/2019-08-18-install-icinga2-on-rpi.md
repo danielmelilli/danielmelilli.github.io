@@ -10,6 +10,8 @@ categories: jekyll update
 You can configure Icinga as an agent for your existing Icinga system, or as a standalone
 monitoring system
 
+
+![Icinga on the Raspberry Pi](/assets/finalscreen.PNG)
 ## Why use Icinga?
 
 Well, firstly it's Open Source. If you have used Nagios before, you will
@@ -243,6 +245,8 @@ MariaDB [mysql]> GRANT ALL ON icingaweb2.* TO icingaweb2@localhost IDENTIFIED BY
 You may also create a separate administrative account with all privileges instead.
 
 Note: This is only required if you are using a local database as the authentication type.
+
+![Modules](/assets/2modules.PNG)
 
 ### Starting Web Setup 
 
