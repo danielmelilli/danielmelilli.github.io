@@ -5,12 +5,12 @@ date:   2019-08-18 00:02:44 -0400
 categories: jekyll update
 ---
 
-Installing Icinga on Raspberry Pi
+#Installing Icinga on Raspberry Pi
 
 You can configure Icinga as an agent for your existing icinga system, or as a standalone
 monitoring system
 
-Why use Icinga?
+##Why use Icinga?
 
 Well, firstly it's Open Source. If you have used Nagios before, you will
 see that a lot of things are similair (since it's based on Nagios).  And
@@ -25,10 +25,10 @@ The user interface is extremely clean and responsive.  I usually use my phone
 to keep an eye on things, and it's always been a positive experience.
 
 
-These are instructions to install Icinga on Raspbian flavor of OS.
+#These are instructions to install Icinga on Raspbian flavor of OS.
 
 
-First you will want to add the key
+First you will want to add this key
 
 ```
 curl https://packages.icinga.com/icinga.key | sudo apt-key add -
@@ -92,7 +92,7 @@ Next, enable the icinga2 service to run on system startup
 sudo systemctl enable icinga2
 ```
 
-Setting up Icinga Web 2 
+#Setting up Icinga Web 2 
 Icinga 2 can be used with Icinga Web 2 and a variety of modules. This  explains how to set up Icinga Web 2.
 
 The DB IDO (Database Icinga Data Output) feature for Icinga 2 take care of exporting all configuration and status information into a database.
@@ -114,77 +114,93 @@ apt-get install icinga2-ido-mysql
 ```
 
 
-Setting up the MySQL database ¶
-Set up a MySQL database for Icinga 2:
+#Setting up the MySQL database 
 
+##Set up a MySQL database for Icinga 2:
 
-# mysql -u root -p
+```
+mysql -u root -p
+```
 
+```
 CREATE DATABASE icinga;
 GRANT SELECT, INSERT, UPDATE, DELETE, DROP, CREATE VIEW, INDEX, EXECUTE ON icinga.* TO 'icinga'@'localhost' IDENTIFIED BY 'icinga';
 quit
-
+```
 
 
 
 After creating the database you can import the Icinga 2 IDO schema usin
 g the following command. Enter the root password into the prompt when asked.
 
-
+```
 mysql -u root -p icinga < /usr/share/icinga2-ido-mysql/schema/mysql.sql
+```
 
+##Enabling the IDO MySQL module 
 
-Enabling the IDO MySQL module ¶
 The package provides a new configuration file that is installed in /etc/icinga2/features-available/ido-mysql.conf. You can update the database credentials in this file.
 
 All available attributes are explained in the IdoMysqlConnection object chapter.
 
 You can enable the ido-mysql feature configuration file using icinga2 feature enable:
 
-
-# icinga2 feature enable ido-mysql
+```
+icinga2 feature enable ido-mysql
 Module 'ido-mysql' was enabled.
 Make sure to restart Icinga 2 for these changes to take effect.
-Restart Icinga 2.
+```
 
+###Restart Icinga 2.
 
+```
 systemctl restart icinga2
+```
 
-Webserver ¶
+#Webserver 
+
 The preferred way of installing Icinga Web 2 is to use Apache as webserver in combination with PHP-FPM. If you prefer Nginx, please refer to the Icinga Web 2 documentation.
 
 Debian/Ubuntu:
-
-
+```
 apt-get install apache2
-
+```
 
 
 Enable port 80 (http). Best practice is to only enable port 443 (https) and use TLS certificates.
 
+```
 iptables:
 iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 service iptables save
+```
 
-Setting Up Icinga 2 REST API ¶
+##Setting Up Icinga 2 REST API 
+
 Icinga Web 2 and other web interfaces require the REST API to send actions (reschedule check, etc.) and query object details.
 
 You can run the CLI command icinga2 api setup to enable the api feature and set up certificates as well as a new API user root with an auto-generated password in the /etc/icinga2/conf.d/api-users.conf configuration file:
 
+```
 icinga2 api setup
+```
+
 Edit the api-users.conf file and add a new ApiUser object. Specify the permissions attribute with minimal permissions required by Icinga Web 2.
 
-
+```
 vim /etc/icinga2/conf.d/api-users.conf
 
 object ApiUser "icingaweb2" {
   password = "Wijsn8Z9eRs5E25d"
   permissions = [ "status/query", "actions/*", "objects/modify/*", "objects/query/*" ]
 }
+```
+
 Restart Icinga 2 to activate the configuration.
 
-
+```
 systemctl restart icinga2
+```
 
 
 After you have installed Icinga.  The next step is to get Icinga Web 2
@@ -192,17 +208,16 @@ setup and configured.  Please pay special attention to these steps as they
 could be a little tricky.  
 
 
-Installing Icinga Web 2 ¶
+#Installing Icinga Web 2 
 You can install Icinga Web 2 by using your distribution’s package manager to install the icingaweb2 package. Below is a list with examples for various distributions. The additional package icingacli is necessary to follow further steps in this guide. The additional package libapache2-mod-php is necessary on Ubuntu to make Icinga Web 2 working out-of-the-box if you aren’t sure or don’t care about PHP FPM.
 
 Debian:
-
 ```
 apt-get install icingaweb2 libapache2-mod-php icingacli
 ```
 
 
-Preparing Web Setup 
+##Preparing Web Setup 
 
 You can set up Icinga Web 2 quickly and easily with the Icinga Web 2 setup wizard which is available the first time you visit Icinga Web 2 in your browser. When using the web setup you are required to authenticate using a token. In order to generate a token use the icingacli:
 
@@ -216,7 +231,7 @@ In case you do not remember the token you can show it using the icingacli:
 icingacli setup token show
 ```
 
-Preparing Web Setup on Debian 
+##Preparing Web Setup on Debian 
 On Debian, you need to manually create a database and a database user prior to starting the web wizard. This is due to local security restrictions whereas the web wizard cannot create a database/user through a local unix domain socket.
 
 ```
@@ -229,7 +244,7 @@ You may also create a separate administrative account with all privileges instea
 
 Note: This is only required if you are using a local database as authentication type.
 
-Starting Web Setup 
+###Starting Web Setup 
 
 Finally visit Icinga Web 2 in your browser to access the setup wizard and complete the installation: /icingaweb2/setup.
 
