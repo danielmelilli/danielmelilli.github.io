@@ -42,3 +42,7 @@ google_analytics: UA-136347629-1
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+collections:
+  - homeauto
