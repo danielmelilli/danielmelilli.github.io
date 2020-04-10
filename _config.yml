@@ -45,5 +45,5 @@ google_analytics: UA-136347629-1
 
 
 collections:
-  - homeauto
+   homeauto:
       output: true
