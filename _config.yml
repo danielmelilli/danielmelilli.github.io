@@ -44,6 +44,20 @@ google_analytics: UA-136347629-1
 #   - vendor/ruby/
 
 
+#collections:
+#  homeautomation:
+#    output: true
+#  permalink: /home-automation/:path/
+#   collections_dir: home-automation
+
 collections:
-  - homeauto
+  projects:
+     output: true
+     permalink: /projects/:path/
+     collections_dir: projects
   
+collections: 
+  cookies:
+    output: true
+    permalink: /cookies/:path/
+    collections_dir: cookies

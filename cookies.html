@@ -1,0 +1,12 @@
+---
+layout: page
+permalink: /cookies
+title: cookies
+---
+
+
+{% for cookie in site.cookies %}
+  <h2>{{ cookie.title }}</h2>
+    <p>{{ cookie.description }}</p>
+      <p><a href="{{ cookie.url }}">{{ cookie.title }}</a></p>
+      {% endfor %}

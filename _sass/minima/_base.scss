@@ -111,7 +111,7 @@ a {
   }
 
   &:hover {
-    color: $text-color;
+    color: darken($text-color, 20%);
     text-decoration: underline;
   }
 
@@ -148,7 +148,7 @@ blockquote {
  */
 pre,
 code {
-  @include relative-font-size(0.9375);
+  @include relative-font-size(0.6);
   border: 1px solid $grey-color-light;
   border-radius: 3px;
   background-color: #eef;
